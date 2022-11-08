@@ -1,0 +1,55 @@
+﻿@model WebApplicationMVCEjemplo.Models.Usuario
+@{
+    ViewData["Title"] = "Editar Usuario";
+}
+
+<h1 class="text-center">Aplicación Ejemplo para entrevista Logitravel</h1>
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenidas</h1>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card border">
+            <div class="card-header">
+                <h3 class="text-center">Modificar Usuario</h3>
+            </div>
+            <div class="card-body">
+                <form asp-controller="Home" asp-action="Editar" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <!-- Enviar el id-->
+                    <input type="hidden" asp-for="Id"/>
+
+
+
+                    <div class="form-group">
+                        <label asp-for="Nombre" class="control-label"></label>
+                        <input asp-for="Nombre" class="form-control" />
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Telefono" class="control-label"></label>
+                        <input asp-for="Telefono" class="form-control" />
+                        <span asp-validation-for="Telefono" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="from-group">
+                        <button type="submit" class="btn-success">Guardar Usuario</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Volver al listado</a>
+</div>
